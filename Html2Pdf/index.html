@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Sample HTML Page</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+      <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            
+        }
+
+        h1 {
+            color: #0066cc;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        p {
+            color: #333;
+            margin-bottom: 10px;
+            text-align: justify;
+            
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+            margin-left: 250px;
+           
+           
+        }
+
+        a:hover {
+            text-decoration: underline;
+            
+        }
+
+        #downloadLink {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #0066cc;
+            color: #fff;
+            border-radius: 5px;
+            text-align: center;
+            margin-left: 270px;
+            
+        }
+
+        #downloadLink:hover {
+            background-color: #0055aa;
+            cursor: pointer;
+        }
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            
+        }
+
+        .image-container img {
+            width: 330px;
+            height: 250px;
+            border-radius: 10px;
+        }
+         /* Additional styles for the Contact Us section */
+      #contactFormSection {
+         background-color: #f8f8f8;
+         padding: 20px;
+         border-radius: 10px;
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+         margin-top: 30px;
+      }
+
+      /* Styles for the Contact Us form */
+      #contactForm {
+         display: flex;
+         flex-direction: column;
+         max-width: 400px;
+         margin: 0 auto;
+      }
+
+      #contactForm label {
+         margin-bottom: 8px;
+         font-weight: bold;
+      }
+
+      #contactForm input,
+      #contactForm textarea {
+         padding: 10px;
+         margin-bottom: 15px;
+         border: 1px solid #ccc;
+         border-radius: 5px;
+         resize: vertical;
+      }
+
+      #contactForm textarea {
+         height: 100px;
+      }
+
+      #contactForm button {
+         padding: 10px 20px;
+         background-color: #0066cc;
+         color: #fff;
+         border: none;
+         border-radius: 5px;
+         cursor: pointer;
+         font-size: 16px;
+         width: 100px;
+         margin-left: 150px;
+      }
+
+      #contactForm button:hover {
+         background-color: #0055aa;
+      }
+
+      /* Additional styles for optimizing table layout for printing */
+      @media print {
+         table {
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: collapse;
+         }
+
+         th, td {
+            word-wrap: break-word;
+         }
+      }
+       /* Additional styles for the card */
+       .card-test {
+         border: 1px solid #ccc;
+         border-radius: 5px;
+         padding: 15px;
+         max-width: 500px;
+         margin: 0 auto;
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+         margin-left: 80px;
+         
+      }
+
+      .card-test img {
+         width: 100%;
+         border-radius: 5px;
+      }
+
+      .card-test p {
+         margin: 15px 0;
+         text-align: justify;
+      }
+
+      .card-test button {
+         background-color: #0066cc;
+         color: #fff;
+         border: none;
+         padding: 10px 20px;
+         border-radius: 5px;
+         cursor: pointer;
+         margin-left: 200px;
+      }
+
+    </style>
+</head>
+<body>
+    <h1>Convert HTML files to PDFs</h1>
+
+    <img src="assests/image.jpg" alt="" style="width: 600px; height: 400px; margin-left: 40px; border-radius: 10px;">
+
+    <p>HTML (Hypertext Markup Language) is the system that governs the structure and layout of most websites.
+       Whether you are a student, teacher, designer, small-business owner, or online shopper, 
+       sometimes you need to make an HTML page portable and searchable.</p>
+    <br>
+    <h3>With HTML-to-PDF conversion, you can:</h3>
+    <p>*Share web pages in presentations and projects</p>
+    <p>*Save a content-rich page without losing formatting or links</p>
+    <p>*Collect ideas for a lookbook without losing image quality</p>
+    <p>*Download long newspaper or magazine articles</p>
+    <p>*Save and store online receipts or order confirmations</p>
+
+    <h2>Convert web pages with Acrobat</h2>
+    <p>For more options, convert the web page in the Acrobat desktop app. You can convert linked or unlinked web pages to new PDFs or append them to existing PDF documents. Include an entire website with the HTML code or just particular levels of the website. (A level describes where a page is located in a website’s hierarchy. Think of each click you make deeper into a site away from the main URL as a level.)</p>
+    <br>
+    <p>To convert a specific number of levels in a website:</p>
+    <p>1. Open Acrobat and choose Tools - Create PDF - Web Page.</p>
+    <p>2. Enter the complete path to the web page, or click Browse and locate an HTML file.</p>
+    <p>3. Click Capture Multiple Levels and enter the number of levels to include. (Avoid converting more levels than you need, as that may use up hard drive space and slow down your system.)</p>
+    <p>4. If you select Get Only N Level(s), select Stay on Same Path to download only web pages subordinate to the specified URL, or select Stay on Same Server to download only web pages stored on the same server.</p>
+    <p>5. Click Settings/Advanced Settings, change the selected options in the Web Page Conversion Settings dialog box as needed, and click OK.</p>
+    <p>6. Click Create.</p>
+
+  
+
+    <div class="image-container">
+       <img src="assests/image2.jpg" alt="">
+       <img src="assests/image3.jpg" alt="">
+    </div>
+    <br>
+    <h2>Explore more options to convert an HTML to a PDF.</h2>
+    <p>Customize the web page HTML converter options in the desktop app or with the Acrobat extension. Create tagged bookmarks, or set tags so the PDF document structure matches the HTML document structure. Under the Page Layout tab, set the page width, height, margin measurements, and page orientation. Avoid surprise page breaks by choosing whether to scale contents to fit the page or changing the paper size to fit the content.</p>
+    <br>
+
+    <h2>Why PDF is the right file format.</h2>
+    <p>PDF (Portable Document Format) files are perfect for maintaining text formatting and the sharpness of charts, graphs, and high-quality photos. They meet ISO image standards so you know your colors will stay true.</p>
+    <p>When you export HTML to PDF, you don’t lose the HTML file or associated files like JPEG or PNG images, cascading style sheets, text files, image maps, or forms. Image links, image maps, and media files will appear and function as they did on the web (except for GIFs, which will appear as still images of the last frame).</p>
+    <p>A converted web page retains the functionality of a PDF, so you can extract text and add PDF bookmark tags to make information easier to find. You can combine PDFs or multiple file types into a single PDF and share with a link to collaborate or get feedback from multiple reviewers.</p>
+    <!-- Table comparing HTML to PDF -->
+   <h2>Comparison: HTML vs. PDF</h2>
+
+   <table class="hide-in-pdf" border="1" cellpadding="10" style="border-collapse: collapse; margin-bottom: 30px;">
+      <thead>
+         <tr>
+            <th>Aspect</th>
+            <th>HTML</th>
+            <th>PDF</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr>
+            <td>File Type</td>
+            <td>Text-based markup language</td>
+            <td>Fixed-layout document format</td>
+         </tr>
+         <tr>
+            <td>Interactivity</td>
+            <td>Supports interactive elements (e.g., forms, animations)</td>
+            <td>Supports limited interactivity (e.g., hyperlinks)</td>
+         </tr>
+         <tr>
+            <td>Layout</td>
+            <td>Responsive and fluid layout</td>
+            <td>Fixed layout (pages resemble print documents)</td>
+         </tr>
+         <tr>
+            <td>Editing</td>
+            <td>Editable content</td>
+            <td>Non-editable content (in most cases)</td>
+         </tr>
+         <tr>
+            <td>Compatibility</td>
+            <td>Works on various web browsers</td>
+            <td>Works on PDF reader software (e.g., Adobe Acrobat)</td>
+         </tr>
+         <tr>
+            <td>Printability</td>
+            <td>Not optimized for print</td>
+            <td>Optimized for high-quality print output</td>
+         </tr>
+      </tbody>
+   </table>
+
+   <div id="contactFormSection">
+    <h2 style="text-align: center;">Contact Us</h2>
+    <div class="card">
+       <form id="contactForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit">Submit</button>
+       </form>
+    </div>
+ </div>
+ <br>
+
+ <div class="card-test" >
+    <img src="assests/image2.jpg" alt="Card Image">
+
+    <p>
+       HTML (Hypertext Markup Language) is the system that governs the structure and layout of most websites.
+       Whether you are a student, teacher, designer, small-business owner, or online shopper, 
+       sometimes you need to make an HTML page portable and searchable.
+    </p>
+
+    <button>Read Now</button>
+    
+ </div>
+
+    <!-- Link to download the PDF version of this page -->
+    <p><a href="#" id="downloadLink">Download as PDF</a></p>
+
+     <!-- JavaScript to hide the table in the PDF -->
+   <script>
+    document.getElementById("downloadLink").addEventListener("click", function() {
+       const pdfFileName = "sample.pdf";
+       const table = document.querySelector(".hide-in-pdf");
+
+       // Clone the content to create a hidden version for PDF generation
+       const clonedContent = document.documentElement.cloneNode(true);
+       const clonedTable = clonedContent.querySelector(".hide-in-pdf");
+       clonedTable.style.display = "none";
+
+       // Define the A4 size in millimeters (210mm x 297mm)
+       const pdfOptions = {
+          filename: pdfFileName,
+          html2canvas: { scale: 2 },
+          jsPDF: { format: "a4", orientation: "portrait", unit: "mm", putOnlyUsedFonts: true },
+          pagebreak: { mode: 'avoid-all' }, // Enable auto page breaks
+      };
+    
+
+       // Add a delay of 1 second before generating and saving the PDF
+       setTimeout(function() {
+          html2pdf()
+             .set(pdfOptions)
+             .from(clonedContent)
+             .save();
+       }, 1000);
+    });
+ </script>
+     
+</body>
+</html>
